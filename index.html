@@ -17,8 +17,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&amp;family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
 <style>
 :root{
-  --paper:#F5F2EA; --card:#FFFDF8; --ink:#1C2A1E; --soft:#46524A; --rule:#1C2A1E;
-  --moss:#2F5D3A; --bloom:#B23A5E; --gold:#E0A526; --mulch:#6B4A33; --sprout:#DCE6D4;
+  --paper:#F5F2EA; --card:#FFFDF8; --ink:#1C2A1E; --soft:#46524A; --rule:#1C2A1E; --line:#9AA595;
+  --moss:#2F5D3A; --bloom:#B23A5E; --gold:#E0A526;
   --head:'Bricolage Grotesque', system-ui, sans-serif; --body:'Figtree', system-ui, sans-serif;
 }
 *{box-sizing:border-box}
@@ -31,8 +31,7 @@ input,select,textarea,button{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--bloom);outline-offset:3px}
 h1,h2,h3{font-family:var(--head);margin:0;font-weight:700;letter-spacing:-0.02em}
 p{margin:0}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-.rule{border:0;border-top:1.5px solid var(--rule);margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
 /* header */
 .top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 32px;padding:22px 0 18px;border-bottom:1.5px solid var(--rule)}
@@ -43,87 +42,59 @@ p{margin:0}
 .top nav a.q{font-weight:600;color:var(--bloom)}
 
 /* hero */
-.hero{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:48px;padding:64px 0 56px;align-items:end}
-.hero h1{font-size:clamp(46px,7.4vw,96px);line-height:.95;letter-spacing:-0.04em;font-weight:800;font-variation-settings:"wdth" 88}
-.hero h1 em{font-style:normal;color:var(--moss)}
-.lede{margin-top:28px;max-width:34em;font-size:19px;color:var(--soft)}
-.ctas{margin-top:32px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:32px 56px;align-items:end;padding:72px 0 64px}
+.hero h1{max-width:11.5ch;font-size:clamp(44px,7.2vw,92px);line-height:.95;letter-spacing:-0.04em;font-weight:800;font-variation-settings:"wdth" 88}
+.lede{max-width:32em;font-size:19px;color:var(--soft)}
+.ctas{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border-radius:6px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;border:0;cursor:pointer}
 .btn:hover{background:var(--moss);color:#fff}
 .btn.alt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
 .btn.alt:hover{background:var(--ink);color:#fff}
 .textlink{font-weight:600;color:var(--ink)}
 
-/* "now planting" note */
-.note{background:var(--card);border:1.5px solid var(--ink);padding:22px 24px 24px;position:relative;transform:rotate(-1.2deg);box-shadow:6px 6px 0 var(--sprout)}
-.note .when{font-family:var(--head);font-weight:700;font-size:15px;color:var(--bloom);margin-bottom:10px}
-.note h2{font-size:24px;line-height:1.15;margin-bottom:12px}
-.note ul{margin:0;padding:0;list-style:none}
-.note li{padding:8px 0;border-top:1px dashed #9AA595;display:flex;justify-content:space-between;gap:12px;font-size:16px}
-.note li span:last-child{color:var(--soft);text-align:right}
-.note .foot{margin-top:14px;font-size:15px;color:var(--soft)}
+/* porch pots band */
+.pots{background:var(--ink);color:#EEF2EA}
+.pots .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:20px 48px;padding-top:56px;padding-bottom:56px;align-items:start}
+.pots h2{font-size:clamp(32px,4vw,48px);line-height:1;letter-spacing:-0.035em;font-weight:800;color:#fff}
+.pots p{color:#C9D6C3;max-width:34em}
+.pots p + p{margin-top:12px}
+.pots .btn{margin-top:24px;background:var(--gold);color:var(--ink)}
+.pots .btn:hover{background:#fff;color:var(--ink)}
 
-/* facts strip */
-.facts{display:flex;flex-wrap:wrap;gap:8px 0;padding:14px 0;border-top:1.5px solid var(--rule);border-bottom:1.5px solid var(--rule);font-size:15px;font-weight:500}
-.facts span{padding-right:18px;margin-right:18px;border-right:1px solid #9AA595}
-.facts span:last-child{border:0;margin:0;padding:0}
-
-/* section heads */
-.sec{padding:88px 0 0}
-.sechead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px 48px;align-items:end;margin-bottom:36px}
-.sechead h2{font-size:clamp(34px,4.4vw,54px);line-height:1;letter-spacing:-0.035em;font-weight:800;font-variation-settings:"wdth" 90}
+/* sections */
+.sec{padding:80px 0 0}
+.sechead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:16px 48px;align-items:end;margin-bottom:32px}
+.sechead h2{font-size:clamp(32px,4.2vw,52px);line-height:1;letter-spacing:-0.035em;font-weight:800;font-variation-settings:"wdth" 90}
 .sechead p{color:var(--soft);max-width:36em}
 
 /* price list */
 .price{border-top:1.5px solid var(--rule)}
-.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:20px 40px;padding:30px 0;border-bottom:1.5px solid var(--rule);align-items:start}
-.row h3{font-size:30px;line-height:1;letter-spacing:-0.03em}
-.amt{margin-top:10px;font-family:var(--head);font-size:18px;color:var(--soft)}
-.amt b{font-size:38px;color:var(--ink);font-weight:800;letter-spacing:-0.03em}
-.row ul{margin:0;padding:4px 0 0 18px;color:var(--soft);font-size:18px}
-.row ul li{margin-bottom:4px}
-.row .pick{display:inline-block;margin-top:14px;font-weight:600;color:var(--ink)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:12px 40px;padding:26px 0;border-bottom:1.5px solid var(--rule);align-items:baseline}
+.row h3{font-size:28px;line-height:1;letter-spacing:-0.03em}
+.amt{margin-top:8px;font-family:var(--head);font-size:18px;color:var(--soft)}
+.amt b{font-size:34px;color:var(--ink);font-weight:800;letter-spacing:-0.03em}
+.row p{color:var(--soft);font-size:18px}
+.row .pick{display:inline-block;margin-top:10px;font-weight:600;color:var(--ink)}
 .row .pick:hover{color:var(--bloom)}
-.small{margin-top:18px;font-size:15px;color:var(--soft)}
+.small{margin-top:18px;font-size:16px;color:var(--soft);max-width:44em}
 
-/* steps */
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1.5px solid var(--rule)}
-.steps li{padding:24px 28px 8px 0;border-right:1px solid #9AA595;margin-right:28px}
-.steps li:last-child{border:0;margin:0}
-.steps .n{font-family:var(--head);font-weight:800;font-size:15px;color:var(--bloom);display:block;margin-bottom:8px}
-.steps h3{font-size:23px;margin-bottom:6px}
-.steps p{color:var(--soft)}
-
-/* seasons */
-.year{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1.5px solid var(--rule);background:var(--card)}
-.year > div{padding:20px 20px 24px;border-right:1.5px solid var(--rule)}
-.year > div:last-child{border-right:0}
-.year .bar{height:10px;margin:-20px -20px 18px}
-.year .mo{font-size:14px;font-weight:600;color:var(--soft);margin-bottom:4px}
-.year h3{font-size:22px;margin-bottom:6px}
-.year p{color:var(--soft);font-size:16px}
-
-/* porch pots band */
-.pots{margin-top:88px;background:var(--ink);color:#EEF2EA}
-.pots .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 48px;padding-top:56px;padding-bottom:56px;align-items:center}
-.pots .date{font-family:var(--head);font-weight:800;color:var(--gold);font-size:18px;margin-bottom:10px}
-.pots h2{font-size:clamp(32px,4vw,48px);line-height:1;letter-spacing:-0.035em;font-weight:800;color:#fff}
-.pots p{color:#C9D6C3}
-.pots .btn{background:var(--gold);color:var(--ink)}
-.pots .btn:hover{background:#fff;color:var(--ink)}
+/* how it works */
+.steps{margin:0;padding:20px 0 0 1.4em;border-top:1.5px solid var(--rule);font-size:19px}
+.steps li{padding:5px 0 5px 6px}
+.steps li::marker{font-family:var(--head);font-weight:800;color:var(--bloom)}
 
 /* faq */
-.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;border-top:1.5px solid var(--rule)}
-.faq div{padding:22px 0;border-bottom:1px solid #9AA595}
+.faq{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px;border-top:1.5px solid var(--rule)}
+.faq div{padding:22px 0}
 .faq h3{font-size:20px;margin-bottom:6px;letter-spacing:-0.01em}
 .faq p{color:var(--soft)}
 
 /* contact */
-.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:48px;padding:88px 0}
-.contact h2{font-size:clamp(34px,4.4vw,54px);line-height:1;letter-spacing:-0.035em;font-weight:800;font-variation-settings:"wdth" 90;margin-bottom:18px}
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:48px;padding:80px 0}
+.contact h2{font-size:clamp(32px,4.2vw,52px);line-height:1;letter-spacing:-0.035em;font-weight:800;font-variation-settings:"wdth" 90;margin-bottom:18px}
 .contact .intro{color:var(--soft)}
 .contact dl{margin:28px 0 0;display:grid;grid-template-columns:auto 1fr;gap:0;border-top:1.5px solid var(--rule)}
-.contact dt,.contact dd{padding:12px 0;border-bottom:1px solid #9AA595}
+.contact dt,.contact dd{padding:12px 0;border-bottom:1px solid var(--line)}
 .contact dt{font-weight:600;padding-right:20px}
 .contact dd{margin:0;overflow-wrap:anywhere;color:var(--soft)}
 .panel{background:var(--card);border:1.5px solid var(--ink);padding:clamp(20px,4vw,32px);display:flex;flex-direction:column;gap:18px}
@@ -148,48 +119,17 @@ footer{border-top:1.5px solid var(--rule);padding:28px 0 40px;font-size:15px;col
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 32px}
 footer .name{font-size:19px}
 
-/* scroll motion: only when JS runs and the visitor allows motion */
-.js :is(.hero h1,.lede,.ctas,.facts,.sechead,.row,.steps li,.year>div,.faq>div,.pots .wrap>div,.contact>div){opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .85s cubic-bezier(.2,.65,.25,1);transition-delay:var(--d,0ms)}
-.js :is(.hero h1,.lede,.ctas,.facts,.sechead,.row,.steps li,.year>div,.faq>div,.pots .wrap>div,.contact>div).in{opacity:1;transform:none}
-.js .note{opacity:0;transform:translateY(28px) rotate(0deg);transition:opacity .9s ease .35s,transform 1.2s cubic-bezier(.2,.65,.25,1) .35s}
-.js .note.in{opacity:1;transform:rotate(-1.2deg)}
-.note{translate:0 var(--py,0px)}
-.js :is(.facts,.price,.steps,.faq,.contact dl){position:relative;border-top-color:transparent}
-.js :is(.facts,.price,.steps,.faq,.contact dl)::before{content:"";position:absolute;left:0;right:0;top:-1.5px;height:1.5px;background:var(--rule);transform:scaleX(0);transform-origin:left center;transition:transform 1.3s cubic-bezier(.3,.6,.2,1) .1s}
-.js :is(.facts,.price,.steps,.faq,.contact dl).in::before{transform:scaleX(1)}
-
 @media (max-width: 860px){
-  .hero{grid-template-columns:1fr;gap:40px;padding-top:40px}
-  .note,.js .note.in{transform:none;max-width:460px}
+  .hero{grid-template-columns:1fr;padding:44px 0 48px}
   .sechead,.contact,.pots .wrap{grid-template-columns:1fr}
-  .year{grid-template-columns:1fr 1fr}
-  .year > div:nth-child(2){border-right:0}
-  .year > div:nth-child(-n+2){border-bottom:1.5px solid var(--rule)}
   .faq{grid-template-columns:1fr}
-  .facts{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}
-  .facts span{border:0;margin:0;padding:0}
+  .faq div{padding:18px 0;border-bottom:1px solid var(--line)}
 }
 @media (max-width: 620px){
   .top nav{gap:4px 16px;font-size:15px}
-  .steps{grid-template-columns:1fr}
-  .steps li{border-right:0;margin-right:0;border-bottom:1px solid #9AA595;padding:20px 0}
-  .steps li:last-child{border-bottom:0}
   .row{grid-template-columns:1fr}
-  .facts{grid-template-columns:1fr}
-  .year{grid-template-columns:1fr}
-  .year > div{border-right:0 !important;border-bottom:1.5px solid var(--rule)}
-  .year > div:last-child{border-bottom:0}
 }
 </style>
-<script>
-(function () {
-  var d = document.documentElement;
-  if (!("IntersectionObserver" in window) || !window.matchMedia || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  d.classList.add("js");
-  // if the motion script never runs, show everything
-  setTimeout(function () { if (!window.__bbMotion) d.classList.remove("js"); }, 3000);
-})();
-</script>
 </head>
 <body>
 
@@ -197,134 +137,104 @@ footer .name{font-size:19px}
 <header class="top">
 <a class="name" href="#top">Blooming Beds</a>
 <nav aria-label="Main">
-<a href="#packages">Packages</a>
+<a href="#pots">Porch pots</a>
+<a href="#beds">Flower beds</a>
 <a href="#how">How it works</a>
-<a href="#seasons">Seasons</a>
-<a href="#contact" class="q">Free quote <span aria-hidden="true">→</span></a>
+<a href="#contact" class="q">Free quote</a>
 </nav>
 </header>
 
 <section id="top" class="hero">
+<h1>Fresh color for the beds you already have.</h1>
 <div>
-<h1>Fresh color for the beds you <em>already have.</em></h1>
-<p class="lede">Seasonal flowers planted into your mulched beds, for homes, churches and small businesses around Plymouth Meeting. Plants come from local nurseries and go in close together, so the bed looks finished the same day.</p>
+<p class="lede">We plant seasonal flowers into mulched beds and fill porch pots with fresh winter greens, for homes, churches and small businesses around Plymouth Meeting.</p>
 <div class="ctas">
 <a class="btn" href="#contact">Get a free quote</a>
-<a class="textlink" href="#packages">See prices</a>
+<a class="textlink" href="#beds">See prices</a>
 </div>
 </div>
-<aside class="note" aria-labelledby="now-h">
-<div class="when">Late November</div>
-<h2 id="now-h">What's going in now</h2>
-<ul>
-<li><span>Fir, pine &amp; cedar</span><span>porch pots</span></li>
-<li><span>Magnolia &amp; winterberry</span><span>accents</span></li>
-<li><span>Pinecones</span><span>finishing touch</span></li>
-<li><span>Tulip &amp; daffodil bulbs</span><span>bloom in April</span></li>
-</ul>
-<p class="foot">Winter porch pots are open now and look their best through the holidays. Bulbs, pansies, violas and kale can still go in until the ground freezes.</p>
-</aside>
+</section>
+</div>
+
+<section id="pots" class="pots" aria-labelledby="pots-h">
+<div class="wrap">
+<h2 id="pots-h">Winter porch pots, booking now</h2>
+<div>
+<p>We fill the pots and planters you already have with fresh-cut fir, pine and cedar, plus magnolia, winterberry and pinecones. They look their best through the holidays.</p>
+<p>The price depends on how many pots you have and how big they are. Tell us and we'll send a free quote.</p>
+<a class="btn" href="#contact" data-pick="Winter porch pots">Ask about porch pots</a>
+</div>
+</div>
 </section>
 
-<div class="facts">
-<span>Free measurement and quote</span>
-<span>Pay after you see the bed</span>
-<span>Venmo, cash or check</span>
-<span>Before and after photos</span>
-</div>
-
-<section id="packages" class="sec">
+<div class="wrap">
+<section id="beds" class="sec">
 <div class="sechead">
-<h2>Late fall bed packages</h2>
-<p>Prices are for a 10 ft bed. Longer beds cost more by the foot, and you get an exact price after we measure.</p>
+<h2>Flower beds</h2>
+<p>Prices are for a 10 ft bed. Longer beds cost more by the foot, and you get an exact price after we measure. Pansies, violas, kale and bulbs can still go in until the ground freezes.</p>
 </div>
 <div class="price">
 <article class="row">
 <div>
 <h3>Edge</h3>
 <div class="amt">from <b>$110</b></div>
-<a class="pick" href="#contact" data-pick="Edge">Ask about Edge <span aria-hidden="true">→</span></a>
 </div>
-<ul><li>One row of pansies along the front edge</li><li>A clean, finished line on a small budget</li></ul>
+<div>
+<p>One row of pansies along the front edge.</p>
+<a class="pick" href="#contact" data-pick="Edge">Ask about Edge</a>
+</div>
 </article>
 <article class="row">
 <div>
 <h3>Full bed</h3>
 <div class="amt">from <b>$195</b></div>
-<a class="pick" href="#contact" data-pick="Full bed">Ask about Full bed <span aria-hidden="true">→</span></a>
 </div>
-<ul><li>Two rows of pansies along the front</li><li>A row of ornamental kale behind them</li><li>Violas tucked in for extra color</li></ul>
+<div>
+<p>Two rows of pansies, a row of ornamental kale behind them, and violas tucked in.</p>
+<a class="pick" href="#contact" data-pick="Full bed">Ask about Full bed</a>
+</div>
 </article>
 <article class="row">
 <div>
 <h3>Showstopper</h3>
 <div class="amt">from <b>$245</b></div>
-<a class="pick" href="#contact" data-pick="Showstopper">Ask about Showstopper <span aria-hidden="true">→</span></a>
 </div>
-<ul><li>Everything in Full bed</li><li>Tulip and daffodil bulbs planted now, for a second show in April</li></ul>
+<div>
+<p>Everything in Full bed, plus tulip and daffodil bulbs that come up in April.</p>
+<a class="pick" href="#contact" data-pick="Showstopper">Ask about Showstopper</a>
+</div>
 </article>
 </div>
 <p class="small">We plant into beds that are already mulched. We don't do mulching, lawn care or spraying.</p>
 </section>
 
 <section id="how" class="sec">
-<div class="sechead">
-<h2>How it works</h2>
-<p>You pay after the job, once you've seen the bed.</p>
-</div>
+<div class="sechead"><h2>How it works</h2></div>
 <ol class="steps">
-<li><span class="n">01</span><h3>Send the form</h3><p>Send us the form below. A rough bed length is plenty to start.</p></li>
-<li><span class="n">02</span><h3>We measure it</h3><p>We stop by, measure, and give you an exact price for each package. Free, no pressure.</p></li>
-<li><span class="n">03</span><h3>We plant and water it in</h3><p>Plants go in at the right spacing and get watered in. You get a care card and the after photo.</p></li>
+<li>Send the form below. A rough size is enough.</li>
+<li>We come by, measure and give you an exact price. That part is free.</li>
+<li>We plant, water everything in and send you a photo of the finished job.</li>
+<li>You pay after you've seen it, by Venmo, cash or check.</li>
 </ol>
+<p class="small">Want fresh plants every season? Ask about the Four-Season Plan. We come back each season, each visit is priced like that season's package, and you can stop any time.</p>
 </section>
 
-<section id="seasons" class="sec">
-<div class="sechead">
-<h2>The Four-Season Plan</h2>
-<p>We come back each season with fresh plants. Each visit is priced like that season's package, and you can stop any time.</p>
-</div>
-<div class="year">
-<div><div class="bar" style="background:#E0A526"></div><div class="mo">Until the ground freezes</div><h3>Fall color</h3><p>Pansies, violas, ornamental kale and spring bulbs</p></div>
-<div><div class="bar" style="background:#2F5D3A"></div><div class="mo">Now through the holidays</div><h3>Winter greens</h3><p>Fresh-cut greens, magnolia and winterberry for your porch pots</p></div>
-<div><div class="bar" style="background:#B23A5E"></div><div class="mo">March on</div><h3>Spring</h3><p>Pansies, tulips and daffodils</p></div>
-<div><div class="bar" style="background:#6B4A33"></div><div class="mo">Late May on</div><h3>Summer</h3><p>Zinnias, petunias and marigolds</p></div>
-</div>
-</section>
-</div>
-
-<section class="pots" aria-labelledby="pots-h">
-<div class="wrap">
-<div>
-<div class="date">Open now</div>
-<h2 id="pots-h">Winter porch pots</h2>
-</div>
-<div>
-<p>Fresh-cut fir, pine and cedar with magnolia, winterberry and pinecones, arranged in the pots and planters you already have. Ask now and we'll send a free quote.</p>
-<p style="margin-top:20px"><a class="btn" href="#contact" data-pick="Winter porch pots">Ask about porch pots</a></p>
-</div>
-</div>
-</section>
-
-<div class="wrap">
 <section class="sec" aria-labelledby="faq-h">
 <div class="sechead"><h2 id="faq-h">Questions</h2></div>
 <div class="faq">
-<div><h3>Do I need to be home?</h3><p>No. As long as we can reach the bed and a hose, we can plant while you're out. We'll send you the after photo.</p></div>
-<div><h3>Will fall flowers survive the cold?</h3><p>Pansies and ornamental kale handle frost well, and many pansies bloom again in spring. We only plant what's built for the cold.</p></div>
-<div><h3>How do I pay?</h3><p>After the job is done and you've seen the bed, by Venmo, cash or check. We don't take credit cards. We agree on the price before we start.</p></div>
-<div><h3>Where do you work?</h3><p>Plymouth Meeting, Lafayette Hill, Conshohocken, Whitemarsh, Flourtown, Blue Bell and nearby Montgomery County.</p></div>
+<div><h3>Do I need to be home?</h3><p>No. If we can reach the bed and a hose, we can plant while you're out.</p></div>
+<div><h3>Will it survive the cold?</h3><p>Pansies and kale handle frost, and many pansies bloom again in spring. We only plant what's made for cold weather.</p></div>
+<div><h3>Where do you work?</h3><p>Plymouth Meeting, Lafayette Hill, Conshohocken, Whitemarsh, Flourtown, Blue Bell and nearby.</p></div>
 </div>
 </section>
 
 <section id="contact" class="contact">
 <div>
 <h2>Ask for a free quote</h2>
-<p class="intro">Tell us about your bed and we'll reply within a day or two to set up a time to measure.</p>
+<p class="intro">Tell us what you need and we'll reply within a day or two.</p>
 <dl>
 <dt>Email</dt><dd><a href="mailto:henry.bbpa@gmail.com">henry.bbpa@gmail.com</a></dd>
 <dt>Instagram</dt><dd><a href="https://www.instagram.com/blooming.beds.pa/" target="_blank" rel="noopener">@blooming.beds.pa</a></dd>
-<dt>For</dt><dd>Homes, churches, schools and small businesses</dd>
 <dt>Payment</dt><dd>Venmo, cash or check, after the job. No credit cards.</dd>
 </dl>
 </div>
@@ -336,9 +246,9 @@ footer .name{font-size:19px}
 <div class="f"><label for="town">Town or neighborhood</label><input id="town" name="town" type="text" autocomplete="address-level2"><span class="err" id="e-town"></span></div>
 <div class="f"><label for="place">Property type</label><select id="place" name="property"><option>Home</option><option>Church</option><option>School</option><option>Small business</option><option>Other</option></select></div>
 <div class="f"><label for="service">Service</label><select id="service" name="service"><option>Winter porch pots</option><option>Full bed</option><option>Showstopper</option><option>Edge</option><option>Four-Season Plan</option><option>Not sure yet</option></select></div>
-<div class="f"><label for="length">Bed length in feet</label><input id="length" name="bed_length_ft" type="number" min="1" inputmode="numeric"><span class="err" id="e-length"></span></div>
+<div class="f"><label for="length">Bed length in feet (beds only)</label><input id="length" name="bed_length_ft" type="number" min="1" inputmode="numeric"><span class="err" id="e-length"></span></div>
 </div>
-<div class="f"><label for="notes">Anything else? (optional)</label><textarea id="notes" name="notes" rows="3"></textarea></div>
+<div class="f"><label for="notes">Anything else? (optional)</label><textarea id="notes" name="notes" rows="3" placeholder="For porch pots: how many, and about how big"></textarea></div>
 <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
 <button type="submit" id="send" class="btn">Request my free quote</button>
 <p id="form-status" class="status" role="status"></p>
@@ -367,42 +277,11 @@ footer .name{font-size:19px}
 <footer>
 <div class="wrap">
 <a class="name" href="#top">Blooming Beds</a>
-<span>Seasonal flower planting · Plymouth Meeting, PA</span>
+<span>Seasonal flowers and winter porch pots · Plymouth Meeting, PA</span>
 <span><a href="mailto:henry.bbpa@gmail.com">henry.bbpa@gmail.com</a> · <a href="https://www.instagram.com/blooming.beds.pa/" target="_blank" rel="noopener">@blooming.beds.pa</a></span>
 </div>
 </footer>
 
-<script>
-(function () {
-  "use strict";
-  var d = document.documentElement;
-  if (!d.classList.contains("js")) return;
-  window.__bbMotion = true;
-  var items = document.querySelectorAll(".hero h1,.lede,.ctas,.facts,.sechead,.row,.steps li,.year>div,.faq>div,.pots .wrap>div,.contact>div,.facts,.price,.steps,.faq,.contact dl,.note");
-  // items that sit side by side come in one after another
-  document.querySelectorAll(".hero h1,.lede,.ctas,.price .row,.steps li,.year>div,.faq>div,.pots .wrap>div,.contact>div").forEach(function (el) {
-    var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.matches(".hero h1,.lede,.ctas,.facts,.sechead,.row,.steps li,.year>div,.faq>div,.pots .wrap>div,.contact>div"); });
-    var i = sibs.indexOf(el);
-    if (i > 0) el.style.setProperty("--d", Math.min(i, 5) * 110 + "ms");
-  });
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-    });
-  }, { rootMargin: "0px 0px -40px 0px", threshold: 0 });
-  items.forEach(function (el) { io.observe(el); });
-
-  // the "now planting" card drifts up a little slower than the page
-  var note = document.querySelector(".note"), ticking = false;
-  function drift() {
-    ticking = false;
-    var y = window.scrollY;
-    note.style.setProperty("--py", (window.innerWidth > 860 && y < 1200 ? (-y * 0.07).toFixed(1) : 0) + "px");
-  }
-  window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(drift); } }, { passive: true });
-  window.addEventListener("resize", drift);
-})();
-</script>
 <script>
 (function () {
   "use strict";
